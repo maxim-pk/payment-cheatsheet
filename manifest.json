@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Payment Data Cheatsheet",
+  "version": "1.1.0",
+  "version_name": "1.1.0",
+  "description": "Complete test data for payment systems: Stripe, PayPal, Braintree, and 5+ providers. Developer tool for payment integrations.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Payment Cheatsheet",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://docs.stripe.com/*",
+    "https://developer.paypal.com/*",
+    "https://developers.braintreepayments.com/*"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Open Payment Cheatsheet"
+    }
+  },
+  "web_accessible_resources": [{
+    "resources": ["icons/*", "data/*"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

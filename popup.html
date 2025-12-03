@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Cheatsheet</title>
+    <link rel="stylesheet" type="text/css" href="popup.css"/>
+</head>
+<body>
+<div class="quick-actions">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search cards, providers, errors...">
+        <div id="search-results" class="search-results"></div>
+    </div>
+</div>
+
+<div class="tabs">
+    <button class="tab active" data-tab="common">Common</button>
+    <button class="tab" data-tab="stripe">Stripe</button>
+    <button class="tab" data-tab="paypal">PayPal</button>
+    <button class="tab" data-tab="braintree">Braintree</button>
+    <button class="tab" data-tab="authnet">AuthNet</button>
+    <button class="tab" data-tab="epd">EPD</button>
+    <button class="tab" data-tab="klarna">Klarna</button>
+    <button class="tab" data-tab="finix">Finix</button>
+    <button class="tab" data-tab="mollie">Mollie</button>
+</div>
+
+<div id="common" class="tab-content">
+    <div class="section-group">
+        <div class="section">
+            <h3>Visa</h3>
+            <div class="data-item">
+                <code>4111 1111 1111 1111</code>
+                <button class="copy-btn" data-copy="4111 1111 1111 1111">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>4242 4242 4242 4242</code>
+                <button class="copy-btn" data-copy="4242 4242 4242 4242">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>4012 8888 8888 1881</code>
+                <button class="copy-btn" data-copy="4012 8888 8888 1881">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>4222 2222 22222</code>
+                <button class="copy-btn" data-copy="4222 2222 22222">Copy</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3>MasterCard</h3>
+            <div class="data-item">
+                <code>5499 7400 0000 0057</code>
+                <button class="copy-btn" data-copy="5499 7400 0000 0057">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>5555 5555 5555 4444</code>
+                <button class="copy-btn" data-copy="5555 5555 5555 4444">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>5105 1051 0510 5100</code>
+                <button class="copy-btn" data-copy="5105 1051 0510 5100">Copy</button>
+            </div>
+        </div>
+    </div>
+    <div class="section-group">
+        <div class="section">
+            <h3>American Express</h3>
+            <div class="data-item">
+                <code>3782 82246 310005</code>
+                <button class="copy-btn" data-copy="3782 82246 310005">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>3714 49635 398431</code>
+                <button class="copy-btn" data-copy="3714 49635 398431">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>3787 34493 671000</code>
+                <button class="copy-btn" data-copy="3787 34493 671000">Copy</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Diners Club</h3>
+            <div class="data-item">
+                <code>3852 0000 023237</code>
+                <button class="copy-btn" data-copy="3852 0000 023237">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>3056 9309 025904</code>
+                <button class="copy-btn" data-copy="3056 9309 025904">Copy</button>
+            </div>
+        </div>
+    </div>
+    <div class="section-group">
+        <div class="section">
+            <h3>Discover</h3>
+            <div class="data-item">
+                <code>6011 0009 9100 1201</code>
+                <button class="copy-btn" data-copy="6011 0009 9100 1201">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>6011 1111 1111 1117</code>
+                <button class="copy-btn" data-copy="6011 1111 1111 1117">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>6011 0009 9013 9424</code>
+                <button class="copy-btn" data-copy="6011 0009 9013 9424">Copy</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3>JCB</h3>
+            <div class="data-item">
+                <code>3530 1420 1995 5859</code>
+                <button class="copy-btn" data-copy="3530 1420 1995 5859">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>3530 1113 3330 0000</code>
+                <button class="copy-btn" data-copy="3530 1113 3330 0000">Copy</button>
+            </div>
+            <div class="data-item">
+                <code>3566 0020 2036 0505</code>
+                <button class="copy-btn" data-copy="3566 0020 2036 0505">Copy</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="section-group">
+        <div class="section">
+            <h3>SEPA</h3>
+            <div class="data-item">
+                <span>SUCCESS</span>
+                <code>DE89370400440532013000</code>
+                <button class="copy-btn" data-copy="DE89370400440532013000">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>FAILED</span>
+                <code>DE62370400440532013001</code>
+                <button class="copy-btn" data-copy="DE62370400440532013001">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>DISPUTE</span>
+                <code>DE35370400440532013002</code>
+                <button class="copy-btn" data-copy="DE35370400440532013002">Copy</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3>ACH</h3>
+            <div class="data-item">
+                <span>Routing</span>
+                <code>110000000</code>
+                <button class="copy-btn" data-copy="110000000">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Account</span>
+                <code>000123456789</code>
+                <button class="copy-btn" data-copy="000123456789">Copy</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="section-group">
+        <div class="section">
+            <h3>Live Card</h3>
+            <div class="data-item">
+                <span>Number</span>
+                <code>5443 5899 9057 3145</code>
+                <button class="copy-btn" data-copy="5443 5899 9057 3145">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Expire</span>
+                <code>06/25</code>
+                <button class="copy-btn" data-copy="06/25">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>CVC</span>
+                <code>156</code>
+                <button class="copy-btn" data-copy="156">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Country</span>
+                <code>Serbia</code>
+                <button class="copy-btn" data-copy="Serbia">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Zip</span>
+                <code>11000</code>
+                <button class="copy-btn" data-copy="11000">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stripe Tab -->
+<div id="stripe" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://docs.stripe.com/testing" target="_blank">DOC</a>
+    </div>
+    <div class="section-group">
+        <div class="section">
+            <h3>🇺🇸 US Bank Account</h3>
+            <div class="data-item">
+                <span>Routing:</span>
+                <code>110000000</code>
+                <button class="copy-btn" data-copy="110000000">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Account:</span>
+                <code>000123456789</code>
+                <button class="copy-btn" data-copy="000123456789">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Holder:</span>
+                <span>Jenny Rosen</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>💳 Test Cards</h3>
+            <div class="data-item">
+                <span>Success:</span>
+                <code>4242424242424242</code>
+                <button class="copy-btn" data-copy="4242424242424242">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>3DS Required:</span>
+                <code>4000000000003220</code>
+                <button class="copy-btn" data-copy="4000000000003220">Copy</button>
+            </div>
+            <div class="data-item">
+                <span>Insufficient Funds:</span>
+                <code>4000000000009995</code>
+                <button class="copy-btn" data-copy="4000000000009995">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🇬🇧 UK Bank Account</h3>
+        <div class="data-item">
+            <span>Sort Code:</span>
+            <code>12-34-56</code>
+            <button class="copy-btn" data-copy="123456">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Account:</span>
+            <code>12345678</code>
+            <button class="copy-btn" data-copy="12345678">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Insufficient Funds:</span>
+            <code>4000000000009995</code>
+            <button class="copy-btn" data-copy="4000000000009995">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Card Declined:</span>
+            <code>4000000000000002</code>
+            <button class="copy-btn" data-copy="4000000000000002">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>3DS Insufficient Funds:</span>
+            <code>4000008260003178</code>
+            <button class="copy-btn" data-copy="4000008260003178">Copy</button>
+        </div>
+    </div>
+</div>
+
+<!-- Braintree Tab -->
+<div id="braintree" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://developers.braintreepayments.com/reference/general/testing/php#transaction-amounts" target="_blank">DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://developers.braintreepayments.com/reference/general/processor-responses/authorization-responses" target="_blank">Error Code</a>
+    </div>
+    <div class="section">
+        <h3>💳 Test Cards</h3>
+        <div class="data-item">
+            <span>3DS Required:</span>
+            <code>4111 1111 1111 1111</code>
+            <button class="copy-btn" data-copy="4111 1111 1111 1111">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Processor Declined:</span>
+            <code>Amount = $2001</code>
+        </div>
+    </div>
+</div>
+
+<!-- Mollie Tab -->
+<div id="mollie" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://docs.mollie.com/components/testing" target="_blank">DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://docs.mollie.com/components/handling-errors" target="_blank">Error Code</a>
+    </div>
+    <div class="section">
+        <h3>💳 Test Cards</h3>
+        <div class="data-item">
+            <span>3DS Required:</span>
+            <code>4543 4740 0224 9996</code>
+            <button class="copy-btn" data-copy="4543 4740 0224 9996">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Invalid Card Number:</span>
+            <code>Amount = €1,001.00</code>
+        </div>
+        <div class="data-item">
+            <span>Invalid CVV:</span>
+            <code>Amount = €1,002.00</code>
+        </div>
+        <div class="data-item">
+            <span>Invalid Card Holder Name:</span>
+            <code>Amount = €1,003.00</code>
+        </div>
+        <div class="data-item">
+            <span>Card Expired:</span>
+            <code>Amount = €1,004.00</code>
+        </div>
+        <div class="data-item">
+            <span>Invalid Card Type:</span>
+            <code>Amount = €1,005.00</code>
+        </div>
+        <div class="data-item">
+            <span>Refused by Issuer:</span>
+            <code>Amount = €1,006.00</code>
+        </div>
+        <div class="data-item">
+            <span>Insufficient Funds:</span>
+            <code>Amount = €1,007.00</code>
+        </div>
+        <div class="data-item">
+            <span>Inactive Card:</span>
+            <code>Amount = €1,008.00</code>
+        </div>
+        <div class="data-item">
+            <span>Possible Fraud:</span>
+            <code>Amount = €1,009.00</code>
+        </div>
+        <div class="data-item">
+            <span>Authentication Failed:</span>
+            <code>Amount = €1,010.00</code>
+        </div>
+        <div class="data-item">
+            <span>Card Declined:</span>
+            <code>Amount = €1,011.00</code>
+        </div>
+    </div>
+</div>
+
+<!-- PayPal Tab -->
+<div id="paypal" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://developer.paypal.com/docs/api/orders/v2/#orders_patch" target="_blank">Order DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://developer.paypal.com/tools/sandbox/card-testing/" target="_blank">Doc</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://developer.paypal.com/sdk/js/reference/#servernodejs" target="_blank">SDK</a>
+    </div>
+    <div class="section">
+        <h3>Test Cards for PayPal</h3>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4012000033330026</code>
+            <button class="copy-btn" data-copy="4012000033330026">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Amex:</span>
+            <code>371449635398431</code>
+            <button class="copy-btn" data-copy="371449635398431">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Amex:</span>
+            <code>376680816376961</code>
+            <button class="copy-btn" data-copy="376680816376961">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Diners Club:</span>
+            <code>36259600000004</code>
+            <button class="copy-btn" data-copy="36259600000004">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Maestro:</span>
+            <code>6304000000000000</code>
+            <button class="copy-btn" data-copy="6304000000000000">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Maestro:</span>
+            <code>5063516945005047</code>
+            <button class="copy-btn" data-copy="5063516945005047">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4005519200000004</code>
+            <button class="copy-btn" data-copy="4005519200000004">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4012000033330026</code>
+            <button class="copy-btn" data-copy="4012000033330026">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4012000077777777</code>
+            <button class="copy-btn" data-copy="4012000077777777">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4012888888881881</code>
+            <button class="copy-btn" data-copy="4012888888881881">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4217651111111119</code>
+            <button class="copy-btn" data-copy="4217651111111119">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4500600000000061</code>
+            <button class="copy-btn" data-copy="4500600000000061">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4772129056533503</code>
+            <button class="copy-btn" data-copy="4772129056533503">Copy</button>
+        </div>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4915805038587737</code>
+            <button class="copy-btn" data-copy="4915805038587737">Copy</button>
+        </div>
+    </div>
+</div>
+
+<!-- EPD Tab -->
+<div id="epd" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://help.clickfunnels.com/hc/en-us/articles/360006270994-EasyPayDirect-Order-Form-Testing" target="_blank">DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://www.easypaydirect.com/easy-pay-direct-gateway-error-codes/" target="_blank">Error Code</a>
+    </div>
+    <div class="section">
+        <h3>💳 Test Cards</h3>
+        <div class="data-item">
+            <span>MasterCard:</span>
+            <code>5499 7400 0000 0057</code>
+            <button class="copy-btn" data-copy="5499 7400 0000 0057">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Declined:</span>
+            <code>4242424242424242</code>
+            <button class="copy-btn" data-copy="4242424242424242">Copy</button>
+        </div>
+    </div>
+</div>
+
+<!-- Authnet Tab -->
+<div id="authnet" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://developer.authorize.net/hello_world/testing_guide.html" target="_blank">DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://support.authorize.net/s/article/What-Is-the-Decline-Reason-Code-for-a-Transaction" target="_blank">Error Code</a>
+    </div>
+    <div class="section">
+        <h3>💳 Test Cards</h3>
+        <div class="data-item">
+            <span>Visa:</span>
+            <code>4111 1111 1111 1111</code>
+            <button class="copy-btn" data-copy="4111 1111 1111 1111">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Declined:</span>
+            <code>Amount = $70.02</code>
+        </div>
+    </div>
+</div>
+
+<!-- Klarna Tab -->
+<div id="klarna" class="tab-content" style="display: none;">
+    <div class="section">
+        <h3>Phone</h3>
+        <div class="data-item">
+            <span>Success:</span>
+            <code>+61473752244</code>
+            <button class="copy-btn" data-copy="+61473752244">Copy</button>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Denied:</span>
+            <code>+61473763254</code>
+            <button class="copy-btn" data-copy="+61473763254">Copy</button>
+        </div>
+    </div>
+</div>
+
+<!-- Finix Tab -->
+<div id="finix" class="tab-content" style="display: none;">
+    <div class="gateway-info">
+        <a href="https://finix.com/docs/api/overview/#section/Finix-API-Reference" target="_blank">API DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://finix.com/docs/guides/developers/testing-for-specific-responses-and-errors/#testing-transactions" target="_blank">DOC</a>
+        &nbsp;
+        &nbsp;
+        <a href="https://finix.com/docs/guides/developers/errors/" target="_blank">Error Code</a>
+    </div>
+    <div class="section">
+        <h3>Failed:</h3>
+        <div class="data-item">
+            <span>Decline:</span>
+            <code>4000000000009979</code>
+            <button class="copy-btn" data-copy="4000000000009979">Copy</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="popup.js"></script>
+</body>
+</html>
